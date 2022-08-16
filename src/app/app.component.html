@@ -1,0 +1,33 @@
+<div class="container"> 
+
+    <form>
+
+      <div class="form-group"> 
+         <h1 class="text-center text-primary">PRIMERA App</h1>
+           <div class="input-group-prepend">  
+                  <!-- <input type="text" class="form-control" placeholder="ingrese texto ..." name="todo">
+                   <span class="input-group-text">Agregar</span> 
+                  -->
+                  <input type="text" [(ngModel)]="todo" name="todo" class="form-control" placeholder="ingrese texto…" >
+                  <!--<span class="input-group-text" >Agregar</span>-->
+                  <!--<span class="input-group-text" (click)="addTodo(todo)">Agregar</span>-->
+
+                  <span class="input-group-text" (click)="addTodo(todo)">
+                        <i class="material-icons">add</i></span>
+            </div>
+
+            <div><p>{{todo}}</p></div>
+
+            <div class="data"> 
+               <ul class="list-instyled">
+                  <!--  <li *ngFor="let todo of todoArray">{{todo}}</li> -->
+                  <!--  <li *ngFor="let todo of todoArray">{{todo}}<i class="material-icons">delete</i></li>-->
+                  <li *ngFor="let todo of todoArray">{{todo}} 
+                        <i (click)="deleteItem(todo)" class="material-icons">delete</i></li>    
+                  </ul>
+            </div>
+      </div>
+      
+   </form>
+ 
+</div>
